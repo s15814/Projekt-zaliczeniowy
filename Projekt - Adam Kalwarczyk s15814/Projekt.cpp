@@ -12,6 +12,7 @@ Adam Kalwarczyk, 20.01.2017
 #include <conio.h> 
 #include <cstdlib>
 #include <string>
+#include <limits>
 using namespace std;
 //ustalam rozmiary konsoli, przy mojej rozdzielczosci ekranu jest to 120 x 30 znaków, w razie potrzeby mo¿na dostosowaæ siê do innej rozdzielczoœci zmieniaj¹c tylko te dwie wartoœci
 #define szerokosc_tablicy 120
@@ -98,13 +99,13 @@ void wczytaj_dane(int &dlugosc_ramienia, string &znak) {
 		cout << "Jakim znakiem chcesz rysowac?: " << endl;
 		cin >> znak;
 	}
-	cout << "Jaka dlugosc_ramienia ma miec ramie X-a?: ";
+	cout << "Jaka dlugosc ma miec ramie X-a?: ";
 	cin >> dlugosc_ramienia;
 	while (cin.fail() || dlugosc_ramienia <= 0 || dlugosc_ramienia > wysokosc_tablicy / 2 - 1) {
 		cin.clear();
 		cin.ignore(numeric_limits<streamsize>::max(), '\n');
-		cout << "Niepoprawna wartosc." << endl << "dlugosc_ramienia musi byc wieksza od zera i mniejsza od " << wysokosc_tablicy / 2 << " aby figura rysowala sie w calosci." << endl;
-		cout << "Jaka dlugosc_ramienia ma miec ramie X-a?: " << endl;
+		cout << "Niepoprawna wartosc." << endl << "dlugosc musi byc wieksza od zera i mniejsza od " << wysokosc_tablicy / 2 << " aby figura rysowala sie w calosci." << endl;
+		cout << "Jaka dlugosc ma miec ramie X-a?: " << endl;
 		cin >> dlugosc_ramienia;
 	}
 	cout << endl;
